@@ -1,0 +1,22 @@
+-c requirements.txt
+pre-commit
+pre-commit-hooks
+isort
+pylint
+black
+nb_black
+pip-tools
+Sphinx
+python-dotenv>=0.5.1
+kaggle
+pytest
+nbmake
+nbqa
+tox
+notebook
+dvc
+squarify
+streamlit
+fastapi
+uvicorn
+pydantic
