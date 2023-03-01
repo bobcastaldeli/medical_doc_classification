@@ -19,8 +19,8 @@ stages:
       size: 58651964
       nfiles: 1
     - path: src/features/build_features.py
-      md5: 450d6098996dd41fc8ae1390c8e8ab8b
-      size: 2059
+      md5: 092b9cefd9bcca74acd32ff1ff795dce
+      size: 2080
     params:
       params.yaml:
         build_features.column_names:
@@ -57,4 +57,22 @@ stages:
     - path: data/processed
       md5: 293f650fb68e466a6c7362295b41d3b1.dir
       size: 183531207
+      nfiles: 2
+  train_model:
+    cmd: make train_model
+    deps:
+    - path: data/processed
+      md5: 293f650fb68e466a6c7362295b41d3b1.dir
+      size: 183531207
+      nfiles: 2
+    - path: src/models/train_model.py
+      md5: 40b0de0540dd4b5967cef8d7d7d2b8f1
+      size: 2499
+    params:
+      params.yaml:
+        train_model.target: label
+    outs:
+    - path: models
+      md5: 3f2ff1de48ce3a71d0ae4ba144cfbe29.dir
+      size: 438534423
       nfiles: 2

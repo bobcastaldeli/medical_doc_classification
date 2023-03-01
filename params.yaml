@@ -14,3 +14,7 @@ train_model:
   text_column: 'text'
   target: 'label'
   pretrained_model: 'all-mpnet-base-v2'
+evaluate_model:
+  encoding: 'latin1'
+  text_column: 'text'
+  target: 'label'

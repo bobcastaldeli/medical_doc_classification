@@ -39,3 +39,13 @@ stages:
     - train_model.target
     outs:
     - models
+  evaluate_model:
+    cmd: make evaluate_model
+    deps:
+    - src/models/evaluate_model.py
+    - data/processed
+    - models/model.pkl
+    params:
+    - evaluate_model.target
+    outs:
+    - reports

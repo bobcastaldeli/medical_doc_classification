@@ -239,7 +239,6 @@ imagesize==1.4.1
     # via sphinx
 importlib-metadata==6.0.0
     # via
-    #   -c requirements.txt
     #   jupyter-client
     #   nbconvert
     #   sphinx

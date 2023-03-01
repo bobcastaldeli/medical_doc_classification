@@ -80,8 +80,8 @@ split_data:
 train_model:
 	$(PYTHON_INTERPRETER) src/models/train_model.py data/processed models
 
-#evaluate_model:
-#	$(PYTHON_INTERPRETER) src/models/evaluate_model.py data/processed models reports
+evaluate_model:
+	$(PYTHON_INTERPRETER) src/models/evaluate_model.py data/processed models reports
 #################################################################################
 
 ## Delete all compiled Python files
