@@ -1,0 +1,16 @@
+build_features:
+  encoding: 'latin1'
+  column_names: ['label', 'text']
+  use_cols: [1, 2]
+  header: 1
+  text_column: 'text'
+split_data:
+  encoding: 'latin1'
+  test_size: 0.2
+  stratify: 'label'
+  random_state: 42
+train_model:
+  encoding: 'latin1'
+  text_column: 'text'
+  target: 'label'
+  pretrained_model: 'all-mpnet-base-v2'

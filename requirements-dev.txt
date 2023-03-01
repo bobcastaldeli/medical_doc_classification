@@ -278,6 +278,7 @@ jedi==0.18.2
     # via ipython
 jinja2==3.1.2
     # via
+    #   -c requirements.txt
     #   altair
     #   jupyter-server
     #   nbclassic
@@ -486,6 +487,7 @@ pycparser==2.21
     # via cffi
 pydantic==1.10.5
     # via
+    #   -c requirements.txt
     #   -r requirements-dev.in
     #   fastapi
     #   nbmake

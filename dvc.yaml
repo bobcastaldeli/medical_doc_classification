@@ -1,0 +1,41 @@
+stages:
+  download_data:
+    cmd: make make_data
+    deps:
+    - src/data/make_dataset.py
+    outs:
+    - data/raw
+  build_features:
+    cmd: make build_features
+    deps:
+    - src/features/build_features.py
+    - data/raw
+    params:
+    - build_features.encoding
+    - build_features.column_names
+    - build_features.use_cols
+    - build_features.header
+    - build_features.text_column
+    outs:
+    - data/interim
+  split_data:
+    cmd: make split_data
+    deps:
+    - src/features/split_data.py
+    - data/interim
+    params:
+    - split_data.encoding
+    - split_data.test_size
+    - split_data.stratify
+    - split_data.random_state
+    outs:
+    - data/processed
+  train_model:
+    cmd: make train_model
+    deps:
+    - src/models/train_model.py
+    - data/processed
+    params:
+    - train_model.target
+    outs:
+    - models
