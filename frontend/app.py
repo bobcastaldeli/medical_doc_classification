@@ -36,6 +36,11 @@ if st.button("Predict"):
     response = requests.post("http://127.0.0.1:8000/predict", json=data)
 
     prediction = response.json()["prediction"]
+    probability = response.json()["probability"]
+
+    prob_df = pd.DataFrame(
+        {"class": ["colon", "lung", "thyroid"], "probability": probability}
+    ).round(2)
 
     if prediction == 0:
         st.write("This document is about colon cancer")
@@ -43,3 +48,5 @@ if st.button("Predict"):
         st.write("This document is about lung cancer")
     else:
         st.write("This document is about thyroid cancer")
+
+    st.bar_chart(prob_df, x="class", y="probability")

@@ -60,6 +60,10 @@ def clean_text(input_data, output_path):
         r"[^\w\s]+", ""
     )
     dataframe[text_column] = dataframe[text_column].str.replace(r"\d+", "")
+    dataframe["text"] = dataframe["text"].str.replace(r"lungs", "")
+    dataframe["text"] = dataframe["text"].str.replace(r"lung", "")
+    dataframe["text"] = dataframe["text"].str.replace(r"colon", "")
+    dataframe["text"] = dataframe["text"].str.replace(r"thyroid", "")
     dataframe[text_column] = dataframe[text_column].astype(str)
 
     logger.info("Saving data...")

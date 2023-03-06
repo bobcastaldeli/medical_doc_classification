@@ -28,16 +28,14 @@ def predict(data: TextData):
     payload = jsonable_encoder(data)
 
     prediction = model.predict(payload)
-    # probability = model.predict_proba(payload)
+    probability = model.predict_proba(payload)
 
     # Return the predictions as a dictionary
     prediction = prediction[0].item()
-    # probability = probability[0][1].item()
+    # return a array of probabilities for each class
+    probability = probability[0].tolist()
 
-    result = {
-        "prediction": prediction,
-        # "probability": probability
-    }
+    result = {"prediction": prediction, "probability": probability}
 
     return result
 
